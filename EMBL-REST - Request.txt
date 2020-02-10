@@ -1,0 +1,101 @@
+1. Take a checkout of the application
+2. Import to eclipse
+3. Run EmblCrudRestApplication.java from com.embl.test.emblcrudrest package
+
+Tool used for verification : POSTMan Client
+
+4. Check if app is UP : http://localhost:8080/rest/api/healthCheck
+
+
+Create: Post Type Request
+		http://localhost:8080/rest/api/createPerson
+		Body:
+			{
+				"id": 1,
+				"first_name": "John",
+				"last_name": "cena",
+				"age": 39,
+				"favourite_color": "red",
+				"hobby": [
+					"wwe"
+				]
+			}
+GetAll: Get Request : http://localhost:8080/rest/api/fetchAll
+Response: 	
+	{
+		"person": [
+			{
+				"id": 1,
+				"first_name": "John",
+				"last_name": "cena",
+				"age": 39,
+				"favourite_color": "red",
+				"hobby": [
+					"wwe"
+				]
+			},
+			{
+				"id": 2,
+				"first_name": "Sandeep",
+				"last_name": "Pandey",
+				"age": 19,
+				"favourite_color": "blue",
+				"hobby": [
+					"cricket",
+					"badminton",
+					"reading"
+				]
+			},
+			{
+				"id": 3,
+				"first_name": "abhay",
+				"last_name": "Pandey",
+				"age": 49,
+				"favourite_color": "black",
+				"hobby": [
+					"cricket",
+					"reading"
+				]
+			},
+			{
+				"id": 4,
+				"first_name": "cristiano",
+				"last_name": "ronaldo",
+				"age": 31,
+				"favourite_color": "green",
+				"hobby": [
+					"football",
+					"life"
+				]
+			}
+		]
+	}
+	
+3. get based on ID: Get Type Request : http://localhost:8080/rest/api/fetchBy/2
+	{
+		"person": {
+			"id": 2,
+			"first_name": "John",
+			"last_name": "Wick",
+			"age": 29,
+			"favourite_color": "red",
+			"hobby": [
+				"shopping",
+				"football"
+			]
+		}
+	}
+
+4. Update Person : Put Type Request : http://localhost:8080/rest/api/updatePerson
+Body:
+		{
+			"id":2,
+			"first_name": "John",
+			"last_name": "cena",
+			"age": "39",
+			"favourite_color": "blood",
+			"hobby": ["wwe"]
+		}
+
+5. Delete by Id: Delete type request: http://localhost:8080/rest/api/deleteById/2
+Response: 
