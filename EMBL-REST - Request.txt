@@ -1,24 +1,32 @@
-1. Take a checkout of the application
-2. Import to eclipse
-3. Run EmblCrudRestApplication.java from com.embl.test.emblcrudrest package
+UI:
+1. Please install latest node.js 
+2. install npm [https://docs.npmjs.com/downloading-and-installing-node-js-and-npm]
+## npx create-react-app react-ui-embl
+4. Clone the project from https://github.com/imsandy89/UI-React-EMBL.git 
+5. import the directory trunk/react-ui-embl to Visual Studio Code
+6. go to terminal and make base directory to react-ui-embl as : [cd c://work/fullstack/react/trunk/react-ui-embl]
+7. run command npm install here
+8. once npm install finishes, you can see, node module folder has been addded to directory react-ui-embl. run command npm start
+
+Java-SpringBoot:
+1. Clone the project from https://github.com/imsandy89/EBI01587-EMBL.git
+2. Import to eclipse and build by reslving maven depndencies
+3. Run EmblCrudRestApplication.java from as a Spring-Boot application
 
 Tool used for verification : POSTMan Client
-
 4. Check if app is UP : http://localhost:8080/rest/api/healthCheck
 
 
-Create: Post Type Request
-		http://localhost:8080/rest/api/createPerson
+Healthcheck: http://localhost:8080/rest/api/healthCheck
+
+Create - Post Type Request : http://localhost:8080/rest/api/createPerson
 		Body:
 			{
-				"id": 1,
-				"first_name": "John",
-				"last_name": "cena",
-				"age": 39,
-				"favourite_color": "red",
-				"hobby": [
-					"wwe"
-				]
+				"first_name": "Ross",
+				"last_name": "Geller",
+				"age": "43",
+				"favourite_color": "Brown",
+				"hobby": ["Books","paleontology", "dynasoure"]
 			}
 GetAll: Get Request : http://localhost:8080/rest/api/fetchAll
 Response: 	
@@ -27,10 +35,11 @@ Response:
 			{
 				"id": 1,
 				"first_name": "John",
-				"last_name": "cena",
-				"age": 39,
-				"favourite_color": "red",
+				"last_name": "Wick",
+				"age": 48,
+				"favourite_color": "green",
 				"hobby": [
+					"fight",
 					"wwe"
 				]
 			},
@@ -38,34 +47,45 @@ Response:
 				"id": 2,
 				"first_name": "Sandeep",
 				"last_name": "Pandey",
-				"age": 19,
+				"age": 24,
 				"favourite_color": "blue",
 				"hobby": [
 					"cricket",
-					"badminton",
-					"reading"
-				]
-			},
-			{
-				"id": 3,
-				"first_name": "abhay",
-				"last_name": "Pandey",
-				"age": 49,
-				"favourite_color": "black",
-				"hobby": [
-					"cricket",
-					"reading"
+					"one day",
+					"t20"
 				]
 			},
 			{
 				"id": 4,
-				"first_name": "cristiano",
-				"last_name": "ronaldo",
-				"age": 31,
-				"favourite_color": "green",
+				"first_name": "Joe",
+				"last_name": "Tribiany",
+				"age": 45,
+				"favourite_color": "Gray",
 				"hobby": [
-					"football",
-					"life"
+					"Food",
+					"Sandwiches"
+				]
+			},
+			{
+				"id": 5,
+				"first_name": "Chandler",
+				"last_name": "Bing",
+				"age": 44,
+				"favourite_color": "Blue",
+				"hobby": [
+					"Humor",
+					"Jokes"
+				]
+			},
+			{
+				"id": 6,
+				"first_name": "Rachel",
+				"last_name": "Green",
+				"age": 32,
+				"favourite_color": "Pink",
+				"hobby": [
+					"Fashion",
+					"Passion"
 				]
 			}
 		]
@@ -75,13 +95,14 @@ Response:
 	{
 		"person": {
 			"id": 2,
-			"first_name": "John",
-			"last_name": "Wick",
-			"age": 29,
-			"favourite_color": "red",
+			"first_name": "Sandeep",
+			"last_name": "Pandey",
+			"age": 24,
+			"favourite_color": "blue",
 			"hobby": [
-				"shopping",
-				"football"
+				"cricket",
+				"one day",
+				"t20"
 			]
 		}
 	}
@@ -89,12 +110,12 @@ Response:
 4. Update Person : Put Type Request : http://localhost:8080/rest/api/updatePerson
 Body:
 		{
-			"id":2,
-			"first_name": "John",
-			"last_name": "cena",
-			"age": "39",
-			"favourite_color": "blood",
-			"hobby": ["wwe"]
+			"id":5,
+			"first_name": "Chandler",
+			"last_name": "Bing",
+			"age": "44",
+			"favourite_color": "Blue",
+			"hobby": ["Humor","Jokes"]
 		}
 
 5. Delete by Id: Delete type request: http://localhost:8080/rest/api/deleteById/2
